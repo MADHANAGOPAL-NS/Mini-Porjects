@@ -1,0 +1,48 @@
+<center>
+    <h1>Guess the number from 1 to 10</h1>
+    <table>
+    <tr>
+        <td>Number: </td>
+        <td><input type = "number" id = "num"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <button onclick="game()">Check</button>
+        </td>
+    </tr>
+</table>
+    <p id = "res">You are Wrong / Right</p>
+    <p id = "score1">Score: 10</p>
+</center>
+<style>
+    body{
+        background-color: aqua;
+    }
+</style>
+<body>
+    <script>
+    var score = 10
+    function game(){
+        var a = Number(document.getElementById("num").value)
+        var random = Math.floor(Math.random()*10) + 1
+        var final = document.getElementById("res")
+        if(random == a){
+            score = score + 1
+            alert("Hurray You Won")
+            final.textContent = "Right"
+            score1.textContent = "Score: "+score
+        }
+        else{
+            score = score - 1
+            score1.textContent = "Score: "+score
+            final.textContent = "Wrong!"
+        }
+
+        if(score == 0){
+            alert("Please Try Again")
+        }
+        
+    }
+</script>
+</body>
